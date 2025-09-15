@@ -23,18 +23,12 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
               userPassword: password,
             }
           );
-          console.log("API Response:", res.data);
+      
           const { user, token } = res.data;
-          console.log("------------------------------------")
-          console.log("User ",user);
-          console.log("token :",token)
+         
 
           if (!user) return null;
-          console.log("Authorize returned:", {
-            id: user.id,
-            email: user.userEmail,
-            name: user.userName,
-          });
+         
 
           return {
             id: user.id,
@@ -47,7 +41,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             "Authorize error:",
             error.response?.data || error.message || error
           );
-          return null; // Always return null on failure
+          return null;
         }
       },
     }),
@@ -60,14 +54,14 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         token.id = user.id;
         token.accessToken = user.accessToken;
         token.name = user.name;
-        token.email = user.email; // <- this should now be guaranteed
+        token.email = user.email; 
       }
       return token;
     },
     async session({ session, token }) {
       session.user.id = token.id as string;
       session.user.name = token.name as string;
-      session.user.email = token.email as string; // <- now safe
+      session.user.email = token.email as string; 
       session.accessToken = token.accessToken as string;
       return session;
     },

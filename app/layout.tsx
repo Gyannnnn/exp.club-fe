@@ -30,7 +30,9 @@ export default function RootLayout({
       >
         <Navbar/>
         <div className="flex justify-center items-center pt-20">
-          {children}
+          <div className="h-screen sm:w-[60vw] w-[98vw]">
+            {children}
+          </div>
         </div>
       </body>
     </html>

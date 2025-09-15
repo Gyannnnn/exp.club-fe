@@ -41,7 +41,7 @@ export function LoginForm() {
         console.error("Sign in error:", result.error);
       } else {
         toast.success("Sign in successful");
-        router.push("/");
+        router.push("/profile");
         router.refresh(); // Refresh to update auth state
       }
     } catch (error) {

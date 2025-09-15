@@ -27,8 +27,9 @@ export function SignupForm() {
     const userEmail = formData.get("email");
     const userPassword = formData.get("password");
     const userBio = formData.get("bio");
-    console.log(userName, userEmail, userPassword, userBio);
+
     Setloading(true);
+    const id = toast.loading("Signing up")
     try {
       const res = await axios.post("http://localhost:8000/api/v1/auth/signup", {
         userName,
@@ -36,10 +37,11 @@ export function SignupForm() {
         userPassword,
         userBio,
       });
-      console.log(res.data);
+      toast.remove(id);
+
       Setloading(false);
       toast.success("Signup Successfull");
-      router.push("/");
+      router.push("/signin");
     } catch (error) {
       Setloading(false);
       toast.error("Failed to Signup");

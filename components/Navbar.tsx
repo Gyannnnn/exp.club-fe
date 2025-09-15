@@ -12,11 +12,10 @@ const navData = [
 
 export default async function Navbar() {
   const session = await auth();
-   console.log("Debug session:", JSON.stringify(session, null, 2));
-  console.log("email: -----------------------")
+
   console.log(session?.user.email)
   return (
-    <div className="h-20 w-screen bg-background fixed top-0 p-4 flex sm:justify-around items-center justify-between">
+    <div className="h-20 w-screen bg-background fixed top-0 p-4 flex sm:justify-around items-center justify-between z-50">
       <Logo />
       <div className="w-1/3 bg-muted h-14 rounded-3xl sm:flex hidden items-center justify-around">
         {navData.map((data, index) => (
