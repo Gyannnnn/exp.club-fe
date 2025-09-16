@@ -43,6 +43,7 @@ export function SignupForm() {
       toast.success("Signup Successfull");
       router.push("/signin");
     } catch (error) {
+      toast.remove(id);
       Setloading(false);
       toast.error("Failed to Signup");
       console.log(error);
