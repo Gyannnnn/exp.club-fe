@@ -17,7 +17,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           const { email, password } = credentials;
 
           const res = await axios.post(
-            "http://localhost:8000/api/v1/auth/signin",
+            "https://exp-club-be.vercel.app/api/v1/auth/signin",
             {
               userEmail: email,
               userPassword: password,

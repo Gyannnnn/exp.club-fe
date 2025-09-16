@@ -13,7 +13,7 @@ export default async function FollowPage() {
   }
   try {
     const res = await axios.get<users>(
-      "http://localhost:8000/api/v1/users/all",
+      "https://exp-club-be.vercel.app/api/v1/users/all",
       {
         headers: {
           Authorization: `Bearer ${session.accessToken}`,

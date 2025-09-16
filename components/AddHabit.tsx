@@ -20,7 +20,7 @@ export default function AddHabit({userId,token}:{userId:string,token:string}) {
     const id = toast.loading("Adding habit...");
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:8000/api/v1/habits/create", {
+      const res = await axios.post("https://exp-club-be.vercel.app/api/v1/habits/create", {
         name,
         description,
         category,

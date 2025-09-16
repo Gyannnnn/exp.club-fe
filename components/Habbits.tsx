@@ -5,7 +5,7 @@ import { ProfileHabit } from "@/Types/axiosTypes";
 
 export default async function Habits({ userId, token }: { userId: string; token: string }) {
   try {
-    const res = await axios.get<ProfileHabit>(`http://localhost:8000/api/v1/habits/getByUserId/${userId}`, {
+    const res = await axios.get<ProfileHabit>(`https://exp-club-be.vercel.app/api/v1/habits/getByUserId/${userId}`, {
     headers: {
       Authorization: `Bearer ${token}`,
     }

@@ -18,7 +18,7 @@ export default async function ProfilePage() {
   }
   try {
     const res = await axios.get<UserTypes>(
-      `http://localhost:8000/api/v1/users/getbyemail/${session.user.email}`,
+      `https://exp-club-be.vercel.app/api/v1/users/getbyemail/${session.user.email}`,
       {
         headers: {
           Authorization: `Bearer ${session?.accessToken}`,

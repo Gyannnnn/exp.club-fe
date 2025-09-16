@@ -14,7 +14,7 @@ export default async function FeedPage() {
   }
   try {
     const res = await axios.get<FeedRes>(
-      `http://localhost:8000/api/v1/habits/getuserfeed/${
+      `https://exp-club-be.vercel.app/api/v1/habits/getuserfeed/${
         session.user.id as string
       }`,
       {

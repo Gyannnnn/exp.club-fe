@@ -26,7 +26,7 @@ export default function Folllow({
         return
       }
       const res = await axios.post(
-        "http://localhost:8000/api/v1/users/follow",
+        "https://exp-club-be.vercel.app/api/v1/users/follow",
         { followerId, followeeId },
         {
           headers: {
