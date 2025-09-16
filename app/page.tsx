@@ -1,11 +1,9 @@
 import CTAbutton from '@/components/CTAbutton'
-import { Button } from '@/components/ui/button'
-import Link from 'next/link'
 import React from 'react'
 
 export default function page() {
   return (
-    <div className='h-full w-full flex items-start  mt-40'>
+    <div className='h-full w-full flex items-start  sm:mt-40 mt-10'>
       <section className="max-w-6xl mx-auto px-6 py-16 text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
           Build Better Habits, <span>Together</span>

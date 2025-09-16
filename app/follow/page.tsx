@@ -3,7 +3,7 @@ import LoginFirst from "@/components/LoginFirst";
 import { Card } from "@/components/ui/card";
 import axios from "axios";
 import { users } from "@/Types/axiosTypes";
-import {  MailCheckIcon } from "lucide-react";
+import { MailCheckIcon } from "lucide-react";
 import Folllow from "@/components/Folllow";
 
 export default async function FollowPage() {
@@ -21,28 +21,28 @@ export default async function FollowPage() {
       }
     );
     const data = res.data.users;
-  
+
     return (
-      <div className="h-full w-full flex flex-col gap-2 pt-20">
+      <div className="min-h-full w-full flex flex-col gap-2 pt-20 pb-20">
         {data.map((user, index) => (
           <Card
             key={index}
-            className="w-full max-w-2xl mx-auto h-auto flex flex-row justify-between items-center px-6 py-4 mb-4 shadow-md rounded-2xl hover:shadow-lg transition"
+            className="w-full max-w-2xl mx-auto h-auto flex flex-col md:flex-row justify-between items-start md:items-center px-6 py-4 mb-4 shadow-md rounded-2xl hover:shadow-lg transition"
           >
-            <div className="flex flex-col">
+            <div className="flex flex-col w-full">
               <h1 className="text-lg font-semibold text-gray-900">
                 {user.userName}
               </h1>
               <p className="text-sm text-gray-600">{user.userBio}</p>
-              <div className="flex gap-6 mt-2 text-sm text-gray-500">
+              <div className="flex flex-wrap gap-6 mt-2 text-sm text-gray-500">
                 <span>🔥 {user.streak} Streak</span>
-                <span>
+                <span className="flex items-center gap-1">
                   <MailCheckIcon /> {user.userEmail}
                 </span>
               </div>
             </div>
 
-            <div>
+            <div className="mt-4 md:mt-0 md:ml-6 self-end md:self-center">
               <Folllow
                 followeeId={user.id}
                 followerId={session.user.id}

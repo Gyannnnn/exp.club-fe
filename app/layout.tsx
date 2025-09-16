@@ -31,7 +31,7 @@ export default function RootLayout({
       >
         <Navbar/>
         <div className="flex justify-center items-center pt-20">
-          <div className="h-screen sm:w-[60vw] w-[98vw]">
+          <div className="min-h-screen sm:w-[60vw] w-[98vw]">
             {children}
           </div>
         </div>
