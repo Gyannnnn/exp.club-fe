@@ -50,19 +50,19 @@ export default function AddHabit({userId,token}:{userId:string,token:string}) {
       <CardHeader>Add A New Habit Duplicates are not allowed</CardHeader>
       <CardContent>
         <form  className="flex flex-col w-full gap-4" onSubmit={handleHabit}>
-          <div className="w-full flex gap-2">
-            <div className="flex flex-col gap-2 w-1/3">
+          <div className="w-full flex gap-2 max-sm:flex-col">
+            <div className="flex flex-col gap-2 sm:w-1/3 w-full">
               <Label>Habit</Label>
               <Input name="name" placeholder="Enter habit name"></Input>
             </div>
-            <div className="flex flex-col gap-2 w-1/3">
+            <div className="flex flex-col gap-2 sm:w-1/3 w-full">
               <Label>Habit description</Label>
               <Input
                 name="description"
                 placeholder="Enter habit description"
               ></Input>
             </div>
-            <div className="flex flex-col gap-2 w-1/3">
+            <div className="flex flex-col gap-2 sm:w-1/3 w-full">
               <Label>Habit category</Label>
               <Input name="category" placeholder="Enter habit category"></Input>
             </div>

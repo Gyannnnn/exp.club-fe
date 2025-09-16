@@ -10,7 +10,7 @@ import LoginFirst from "@/components/LoginFirst";
 
 export default async function ProfilePage() {
   const session = await auth();
-  console.log(session?.accessToken);
+
   if (!session?.user) {
     return (
      <LoginFirst/>
@@ -28,9 +28,9 @@ export default async function ProfilePage() {
     const userData = res.data;
    
     return (
-      <div className="h-full w-full bg-background flex flex-col gap-2">
+      <div className="min-h-full w-full bg-background flex flex-col gap-2 pb-20">
         <div>
-          <Card className="w-full min-h-20 flex flex-row justify-around items-center mt-10">
+          <Card className="w-full min-h-20 flex flex-row justify-around items-center mt-10 max-sm:px-2">
             <div className="flex flex-col items-center sm:items-center sm:w-1/2">
               <Image
                 className="rounded-full shadow-md border-4 border-white"

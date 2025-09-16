@@ -23,7 +23,8 @@ export default async function FollowPage() {
     const data = res.data.users;
 
     return (
-      <div className="min-h-full w-full flex flex-col gap-2 pt-20 pb-20">
+      <div className="min-h-full w-full flex flex-col gap-2 sm:pt-20 pb-20 pt-10">
+        <h1>Follow other users</h1>
         {data.map((user, index) => (
           <Card
             key={index}

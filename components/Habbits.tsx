@@ -27,7 +27,7 @@ export default async function Habits({ userId, token }: { userId: string; token:
           <h1>No habits found</h1>
         ) : (
           habitData.map((habit)=> (
-            <Card key={habit.id} className="relative h-28 pl-2">
+            <Card key={habit.id} className="relative sm:h-28 h-36 pl-2">
               <h1>{habit.name}</h1>
               <p>{habit.description}</p>
               

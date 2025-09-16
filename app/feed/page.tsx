@@ -94,7 +94,7 @@ export default async function FeedPage() {
       </div>
     );
   } catch (error) {
-    console.log(error);
+
     const err = error as Error;
     return (
       <div className="w-full h-full px-4 sm:px-6 lg:px-8 py-8">
