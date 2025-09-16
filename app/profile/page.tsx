@@ -1,20 +1,19 @@
 import { auth } from "@/auth";
 import axios from "axios";
-import Link from "next/link";
+
 import { UserTypes } from "@/Types/axiosTypes";
 import { Card } from "@/components/ui/card";
 import Image from "next/image";
 import AddHabit from "@/components/AddHabit";
 import Habbits from "@/components/Habbits";
+import LoginFirst from "@/components/LoginFirst";
 
 export default async function ProfilePage() {
   const session = await auth();
   console.log(session?.accessToken);
   if (!session?.user) {
     return (
-      <div className="h-screen w-screen flex items-center justify-center">
-        <Link href={"/signin"}>Signin first</Link>
-      </div>
+     <LoginFirst/>
     );
   }
   try {

@@ -4,7 +4,8 @@ import axios from "axios";
 import { ProfileHabit } from "@/Types/axiosTypes";
 
 export default async function Habits({ userId, token }: { userId: string; token: string }) {
-  const res = await axios.get<ProfileHabit>(`http://localhost:8000/api/v1/habits/getByUserId/${userId}`, {
+  try {
+    const res = await axios.get<ProfileHabit>(`http://localhost:8000/api/v1/habits/getByUserId/${userId}`, {
     headers: {
       Authorization: `Bearer ${token}`,
     }
@@ -29,12 +30,7 @@ export default async function Habits({ userId, token }: { userId: string; token:
             <Card key={habit.id} className="relative h-28 pl-2">
               <h1>{habit.name}</h1>
               <p>{habit.description}</p>
-              <Badge
-                variant="secondary"
-                className="bg-green-500 text-white dark:bg-blue-600 absolute top-2 right-2"
-              >
-                Completed
-              </Badge>
+              
               <Badge
                 className="font-bold absolute bottom-2 right-2"
                 variant="default"
@@ -47,4 +43,11 @@ export default async function Habits({ userId, token }: { userId: string; token:
       </CardContent>
     </Card>
   );
+  } catch (error) {
+    return (
+      <div className="w-full h-20 flex justify-center items-center">
+        <h1>No  habits found</h1>
+      </div>
+    )
+  }
 }

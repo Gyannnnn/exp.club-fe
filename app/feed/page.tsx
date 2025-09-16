@@ -55,14 +55,7 @@ export default async function FeedPage() {
                         <AvatarImage src={`https://api.dicebear.com/7.x/initials/svg?seed=${habit.user.userName}`} />
                         <AvatarFallback>{habit.user.userName.charAt(0)}</AvatarFallback>
                       </Avatar>
-                      <div className="sm:hidden">
-                        <Badge
-                          variant="secondary"
-                          className="bg-green-500 text-white dark:bg-blue-600"
-                        >
-                          Completed
-                        </Badge>
-                      </div>
+                      
                     </div>
                     <div className="flex-1 space-y-2">
                       <div className="flex flex-col sm:flex-row sm:items-center gap-2">
@@ -91,14 +84,7 @@ export default async function FeedPage() {
                       </div>
                     </div>
                     
-                    <div className="hidden sm:block">
-                      <Badge
-                        variant="secondary"
-                        className="bg-green-500 text-white dark:bg-blue-600"
-                      >
-                        Completed
-                      </Badge>
-                    </div>
+                    
                   </div>
                 </Card>
               ))
@@ -114,7 +100,8 @@ export default async function FeedPage() {
       <div className="w-full h-full px-4 sm:px-6 lg:px-8 py-8">
         <Card className="w-full max-w-4xl mx-auto">
           <CardContent className="pt-6 text-center">
-            <h2 className="text-xl font-semibold text-destructive">Error Loading Feed</h2>
+            <h2 className="text-xl font-semibold text-destructive">Follow users to get their habits</h2>
+            
             <p className="mt-2 text-muted-foreground">{err.message}</p>
           </CardContent>
         </Card>

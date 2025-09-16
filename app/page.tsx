@@ -1,3 +1,4 @@
+import CTAbutton from '@/components/CTAbutton'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import React from 'react'
@@ -7,17 +8,13 @@ export default function page() {
     <div className='h-full w-full flex items-start  mt-40'>
       <section className="max-w-6xl mx-auto px-6 py-16 text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-          Build Better Habits, <span className="text-green-500">Together</span>
+          Build Better Habits, <span>Together</span>
         </h1>
         <p className="mt-6 text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
           HabitForge helps you build lasting habits through tracking, community support, and friendly competition. Join others on the journey to self-improvement.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/signup">
-            <Button size="lg" className="px-8">
-              Start Your Journey
-            </Button>
-          </Link>          
+          <CTAbutton/>       
         </div>
       </section>
     </div>
